@@ -2,6 +2,7 @@ package jmri.jmrit.scheduler;
 
 import jmri.ConfigureManager;
 import jmri.InstanceManager;
+import jmri.jmrit.timetable.TimeTableDataManager;
 
 import java.util.Vector;
 
@@ -27,6 +28,8 @@ public class Scheduler {
         // register to store
         InstanceManager.getDefault(ConfigureManager .class).registerUser(this);
     }
+
+    //public Scheduler(boolean loadData) {}
 
     public Vector<Diagram> getDiagrams() {
         return diagrams;
@@ -58,6 +61,18 @@ public class Scheduler {
 
     public void setEnableCancellations(boolean enableCancellations) {
         this.enableCancellations = enableCancellations;
+    }
+
+    /**
+     * Use the InstanceManager to only allow a single data manager instance.
+     * @return the current or new data manager.
+     */
+    public static Scheduler getDataManager() {
+        Scheduler sch = jmri.InstanceManager.getNullableDefault(Scheduler.class);
+        if (sch != null) {
+            return sch;
+        }
+        return new Scheduler(true, true); // TODO: Create this with the proper constructor
     }
 
 }

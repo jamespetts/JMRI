@@ -161,6 +161,7 @@ public class ToolsMenu extends JMenu {
         add(new jmri.jmrit.operations.OperationsMenu());
         add(new jmri.jmrit.dispatcher.DispatcherAction(Bundle.getMessage("MenuItemDispatcher")));
         add(new jmri.jmrit.timetable.swing.TimeTableAction(Bundle.getMessage("MenuItemTimeTable")));
+        add(new jmri.jmrit.scheduler.swing.SchedulerAction(Bundle.getMessage("MenuItemScheduler")));
         add(new jmri.jmrit.whereused.WhereUsedAction(Bundle.getMessage("MenuItemWhereUsed")));
         // CTC menu item with submenus
         JMenu ctcMenu = new JMenu(Bundle.getMessage("MenuCTC"));

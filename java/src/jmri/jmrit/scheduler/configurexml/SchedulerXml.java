@@ -43,6 +43,8 @@ public class SchedulerXml extends jmri.configurexml.AbstractXmlAdapter {
                         .addContent(String.valueOf(s.getEnableCancellations()))
         );
 
+        // TODO: Add load/save for the full range of data
+
         return elem;
     }
 
