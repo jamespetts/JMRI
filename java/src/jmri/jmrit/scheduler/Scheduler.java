@@ -1,7 +1,9 @@
 package jmri.jmrit.scheduler;
 
+import jmri.ConfigureManager;
+import jmri.InstanceManager;
+
 import java.util.Vector;
-import java.io.File;
 
 /**
  * The collection data structures and main logic
@@ -17,6 +19,14 @@ public class Scheduler {
 
     private boolean enableDelays = true;
     private boolean enableCancellations = true;
+
+    public Scheduler(boolean ed, boolean ec) {
+        enableDelays = ed;
+        enableCancellations = ec;
+
+        // register to store
+        InstanceManager.getDefault(ConfigureManager .class).registerUser(this);
+    }
 
     public Vector<Diagram> getDiagrams() {
         return diagrams;
@@ -34,7 +44,7 @@ public class Scheduler {
         this.workings = workings;
     }
 
-    public boolean isEnableDelays() {
+    public boolean getEnableDelays() {
         return enableDelays;
     }
 
@@ -42,7 +52,7 @@ public class Scheduler {
         this.enableDelays = enableDelays;
     }
 
-    public boolean isEnableCancellations() {
+    public boolean getEnableCancellations() {
         return enableCancellations;
     }
 
