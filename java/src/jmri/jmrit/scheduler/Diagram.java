@@ -15,32 +15,32 @@ public class Diagram {
 
     // Member variables
     private String systemName;
-    private String userName;
-    private String trainInfo; // The filename of the train info file for creating the active train
+    private String userName = "";
+    private String trainInfo = ""; // The filename of the train info file for creating the active train
 
     // Note: These are for display usage only and are intended to represent off-layout origins and destinations.
     // They are different to the on-layout blocks/sections that might be represented in a train information file.
-    private String origin;
-    private String destination;
+    private String origin = "";
+    private String destination = "";
 
     private Vector<TimingPoint> timingPoints;
 
-    private int retryInterval; // Seconds
-    private int maxRetries;
-    private String scriptInitialFail; // The file name of the script
-    private String scriptFinalFail; // The file name of the script
+    private int retryInterval = 10; // Seconds
+    private int maxRetries = 6;
+    private String scriptInitialFail = ""; // The file name of the script
+    private String scriptFinalFail = ""; // The file name of the script
 
-    private int cancellationProbability; // Percentage
-    private String scriptCancel;
+    private int cancellationProbability = 0; // Percentage
+    private String scriptCancel = "";
 
-    private int delayProbability; // Percentage
-    private int shortDelayProbability; // Percentage
-    private int shortDelayMaxDuration; // Seconds
-    private int mediumDelayProbability; // Percentage
-    private int mediumDelayMaxDuration; // Seconds
+    private int delayProbability = 0; // Percentage
+    private int shortDelayProbability = 100; // Percentage
+    private int shortDelayMaxDuration = 0; // Seconds
+    private int mediumDelayProbability = 0; // Percentage
+    private int mediumDelayMaxDuration = 0; // Seconds
     // Long delay probability is not stored - this is inferred from 100% - short delay probability - medium delay probability.
-    private int longDelayMaxDuration; // Seconds
-    private String scriptDelay; // The file name of the script
+    private int longDelayMaxDuration =0; // Seconds
+    private String scriptDelay = ""; // The file name of the script
 
     // Getters and setters
 

@@ -11,7 +11,7 @@ import java.util.Vector;
 public class Working {
 
     private String systemName;
-    private String userName;
+    private String userName = "";
 
     private Diagram diagram;
     private String trainInfo = ""; // The filename of the train info file for creating the active train - overrides that in the diagram

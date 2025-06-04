@@ -2,7 +2,6 @@ package jmri.jmrit.scheduler;
 
 import java.io.Serializable;
 import jmri.Block;
-import java.io.File;
 
 /**
  * Define a timing point for a set of timing points in a working
@@ -14,9 +13,9 @@ import java.io.File;
 public class TimingPoint implements java.io.Serializable {
 
     private Block location;
-    private int margin; // Seconds
-    private File scriptEarly;
-    private File scriptLate;
+    private int margin = 0; // Seconds
+    private String scriptEarly = ""; // Filename
+    private String scriptLate = ""; // Filename
 
     public TimingPoint() {}
 
@@ -33,17 +32,17 @@ public class TimingPoint implements java.io.Serializable {
     public int getMargin() {
         return margin;
     }
-    public void setScriptEarly(File se) {
+    public void setScriptEarly(String se) {
         scriptEarly = se;
     }
-    public File getScriptEarly() {
+    public String getScriptEarly() {
         return scriptEarly;
     }
 
-    public void setScriptLate(File sl) {
+    public void setScriptLate(String sl) {
         scriptLate = sl;
     }
-    public File getScriptLate() {
+    public String getScriptLate() {
         return scriptLate;
     }
 
