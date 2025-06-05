@@ -21,7 +21,7 @@ public class SchedulerFrame extends jmri.util.JmriJFrame {
         super(true, true);
         setTitle(Bundle.getMessage("TitleScheduler"));  // NOI18N
         // FIXME: Make this work
-        //InstanceManager.setDefault(Scheduler.class, this);
+        InstanceManager.setDefault(Scheduler.class, this);
         sch = Scheduler.getDataManager();
     }
 
